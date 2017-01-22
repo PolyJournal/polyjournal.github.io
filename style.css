@@ -26,6 +26,15 @@
 }
 
 
+/* article container */
+
+.article_container {
+  border-style: solid;
+  border-width: thin;
+  border-color: grey;
+}
+
+
 /* page title */
 
 .page_title {
