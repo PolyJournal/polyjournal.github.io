@@ -3,6 +3,8 @@
   PolyJournal
 </title>
 <link rel="stylesheet" type="text/css" href="/polyjournal.github.io/style.css">
+<script src="ammap.js" type="text/javascript"></script>
+<script src="worldHigh.js" type="text/javascript"></script>
 <body>
   <center><div class="page_title"><a href="/polyjournal.github.io/index.html">PolyJournal</a></div></center>
   <br />
@@ -15,9 +17,284 @@
   <br />
   <br />
   <center><div class="featured_article_container">NATO's Suprising Political Diversity</div></center>
-  <center><div class="featured_article_subtitle">Oliver Walter - 1/22/2017</div></center>
+  <center><div class="featured_article_subtitle">Oliver Walter - 1/27/2017</div></center>
   <br />
-  <center><img src="/polyjournal.github.io/articles/2017/NATO_political_diversity/NATO_map_final.png"></center>
+  <script>
+var map;
+
+AmCharts.ready(function() {
+    map = new AmCharts.AmMap();
+
+
+    var dataProvider = {
+        mapVar: AmCharts.maps.worldHigh,
+        zoomLevel: 1.8,
+        zoomLongitude: -40,
+        zoomLatitude: 52
+    };
+
+    map.areasSettings = {
+        unlistedAreasColor: "#DDDDDD",
+        rollOverOutlineColor: "#FFFFFF",
+        rollOverColor: "#283237",
+        balloonText: "[[title]] has a [[customData]] ruling party."
+    };
+
+dataProvider.areas = [
+  {
+  title: "Great Britain",
+  id: "GB",
+  color: "#3366CC",
+  customData: "Conservative",
+  groupId: "Conservatism"
+},
+
+{
+  title: "Italy",
+  id: "IT",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy"
+},
+
+{
+  title: "France",
+  id: "FR",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy",
+},
+
+{
+  title: "Germany",
+  id: "DE",
+  color: "#0885ce",
+  customData: "Liberal Conservative",
+  groupId: "Liberal Conservatism"
+},
+
+{
+  title: "Netherlands",
+  id: "NL",
+  color: "#e4337c",
+  customData: "Conservative Liberal",
+  groupId: "Conservative Liberalism"
+},
+
+{
+  title: "Spain",
+  id: "ES",
+  color: "#3366CC",
+  customData: "Conservative",
+  groupId: "Conservatism"
+},
+
+{
+  title: "Belgium",
+  id: "BE",
+  color: "#0885ce",
+  customData: "Liberal Conservative",
+  groupId: "Liberal Conservatism"
+},
+
+{
+  title: "Luxembourg",
+  id: "LU",
+  color: "#76F026",
+  customData: "Liberal",
+  groupId: "Liberalism"
+},
+
+{
+  title: "Denmark",
+  id: "DK",
+  color: "#0885ce",
+  customData: "Liberal Conservative",
+  groupId: "Liberal Conservatism"
+},
+
+{
+  title: "Norway",
+  id: "NO",
+  color: "#3366CC",
+  customData: "Conservative",
+  groupId: "Conservatism"
+},
+
+{
+  title: "Estonia",
+  id: "EE",
+  color: "#F9F732",
+  customData: "Social Liberal",
+  groupId: "Social Liberalism"
+},
+
+{
+  title: "Latvia",
+  id: "LV",
+  color: "#0885ce",
+  customData: "Liberal Conservative",
+  groupId: "Liberal Conservatism"
+},
+
+{
+  title: "Lithuania",
+  id: "LT",
+  color: "#F7B432",
+  customData: "National Conservative",
+  groupId: "National Conservatism"
+},
+
+{
+  title: "Poland",
+  id: "PL",
+  color: "#F7B432",
+  customData: "National Conservative",
+  groupId: "National Conservatism"
+},
+
+{
+  title: "Czechia",
+  id: "CZ",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy"
+},
+
+{
+  title: "Slovakia",
+  id: "SK",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy"
+},
+
+{
+  title: "Hungary",
+  id: "HU",
+  color: "#CC5DFC",
+  customData: "Right-Wing Populist",
+  groupId: "Right-Wing Populism"
+},
+
+{
+  title: "Romania",
+  id: "RO",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy"
+},
+
+{
+  title: "Bulgaria",
+  id: "BG",
+  color: "#0885ce",
+  customData: "Liberal Conservative",
+  groupId: "Liberal Conservatism"
+},
+
+{
+  title: "Turkey",
+  id: "TR",
+  color: "#CC5DFC",
+  customData: "Right-Wing Populist",
+  groupId: "Right-Wing Populism"
+},
+
+{
+  title: "Greece",
+  id: "GR",
+  color: "#A12C1D",
+  customData: "Democratic Socialist",
+  groupId: "Democratic Socialism"
+},
+
+{
+  title: "Albania",
+  id: "AL",
+  color: "#ce0808",
+  customData: "Social Democratic",
+  groupId: "Social Democracy"
+},
+
+{
+  title: "Croatia",
+  id: "HR",
+  color: "#3366CC",
+  customData: "Conservative",
+  groupId: "Conservatism"
+},
+
+{
+  title: "Slovenia",
+  id: "SI",
+  color: "#76F026",
+  customData: "Liberal",
+  groupId: "Liberalism"
+},
+
+{
+  title: "United States",
+  id: "US",
+  color: "#3366CC",
+  customData: "Conservative",
+  groupId: "Conservatism"
+},
+
+{
+  title: "Canada",
+  id: "CA",
+  color: "#76F026",
+  customData: "Liberal",
+  groupId: "Liberalism"
+},
+];
+
+map.dataProvider = dataProvider;
+
+var legend = {
+width: 600,
+backgroundAlpha: 0.5,
+backgroundColor: "#FFFFFF",
+borderColor: "#666666",
+borderAlpha: 1,
+bottom: 15,
+left: 15,
+horizontalGap: 10,
+data: [
+  {
+    title: "Social Democracy",
+    color: "#ce0808"},
+  {
+    title: "Liberal Conservative",
+    color: "#0885ce"},
+  {
+    title: "National Conservatism",
+    color: "#F7B432"},
+  {
+    title: "Right-Wing Populism",
+    color: "#CC5DFC"},
+  {
+    title: "Social Liberalism",
+    color: "#F9F732"},
+  {
+    title: "Liberal Conservatism",
+    color: "#0885ce"},
+  {
+    title: "Liberalism",
+    color: "#76F026"},
+  {
+    title: "Democratic Socialism",
+    color: "#A12C1D"}
+]
+};
+
+map.addLegend(legend);
+map.write("mapdiv");
+});
+
+</script>
+  <center><div id="mapdiv" style="width: 800px; background-color:#eeeeee; height: 500px;"></div></center>
   <br />
   <center><div class="featured_article_body">NATO has a suprising diversity in terms of politics of it's member states. A big question that will confront the organization is how this diversity will contribute to the effectivness of NATO.</div></center>
   <br />
