@@ -16,8 +16,8 @@
 .featured_article_body {
   font-family: "Forum";
   font-size: 18px;
-  margin-left: 350px;
-  margin-right: 350px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .featured_article_subtitle {
@@ -25,13 +25,31 @@
   font-size: 12px;
 }
 
+.container_title {
+  font-family: "EB Garamond";
+  font-size: 50px;
+  text-decoration: underline;
+}
 
-/* article container */
 
-.article_container {
+/* containers */
+
+.ongoing_news_container {
   border-style: solid;
-  border-width: thin;
-  border-color: grey;
+  border-width: medium;
+  border-color: black;
+  height: 1500px;
+  width: 300px;
+  float: right;
+  margin-top: 72px;
+}
+
+.front_page_articles_container {
+  border-style: solid;
+  border-width: medium;
+  border-color: black;
+  width: 1100px;
+  height: 1500px;
 }
 
 
